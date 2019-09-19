@@ -71,4 +71,11 @@ const syncAndSeed = async () => {
     const [offering1, offering2, offering3, offering4] = await mapAndCreate(offerings, Offering);
 }
 
-syncAndSeed();
+module.exports = {
+    syncAndSeed,
+    models: {
+        Company,
+        Product,
+        Offering
+    }
+}
