@@ -58,15 +58,16 @@ const syncAndSeed = async () => {
         { name: 'bar', suggestedPrice: 6,  companyId: US.id },
         { name: 'bazz', suggestedPrice: 6, companyId: US.id},
         { name: 'foo', suggestedPrice: 6, companyId: GLOBAL.id},
-        { name: 'quq', suggestedPrice: 6, companyId: TRISTATE.id}
+        { name: 'quq', suggestedPrice: 6, companyId: TRISTATE.id }
     ]
     const [bar, bazz, foo, quq] = await mapAndCreate(products, Product);
    
     const offerings = [
-        { companyId: US.id, productId: bar.id, price: 4 },
+        { companyId: US.id, productId: bar.id, price: 4},
         { companyId: US.id, productId: bazz.id, price: 6 },
         { companyId: GLOBAL.id, productId: foo.id, price: 6 },
-        { companyId: TRISTATE.id, productId: quq.id, price: 4 }
+        { companyId: TRISTATE.id, productId: quq.id, price: 4},
+        { companyId: TRISTATE.id, productId: bar.id, price: 4}
     ]
     const [offering1, offering2, offering3, offering4] = await mapAndCreate(offerings, Offering);
 }
